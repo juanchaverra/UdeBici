@@ -93,6 +93,6 @@ def mostrar_tablas():
 
 
 
-#cursor.execute("CREATE TABLE ingreso (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, cc INT(11), nombre VARCHAR(255), horaingreso VARCHAR(255), porteriaingreso VARCHAR(255), horasalida VARCHAR(255), porteriasalida VARCHAR(255))")
-#cursor.execute("CREATE TABLE registro (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, cc INT(11), nombre VARCHAR(255), serie VARCHAR(255), marca VARCHAR(255), color VARCHAR(255), foto VARCHAR(255))")
+cursor.execute("CREATE TABLE ingreso (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, cc INT(11), nombre VARCHAR(255), horaingreso VARCHAR(255), porteriaingreso VARCHAR(255), horasalida VARCHAR(255), porteriasalida VARCHAR(255))")
+cursor.execute("CREATE TABLE registro (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, cc INT(11), nombre VARCHAR(255), serie VARCHAR(255), marca VARCHAR(255), color VARCHAR(255), foto VARCHAR(255))")
 
