@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>745</width>
-    <height>690</height>
+    <width>896</width>
+    <height>692</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
+      <x>20</x>
+      <y>0</y>
       <width>351</width>
       <height>51</height>
      </rect>
@@ -40,22 +40,12 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Tip&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="te_buscar">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>120</y>
-      <width>331</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QPushButton" name="bt_salida">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>190</y>
-      <width>83</width>
+      <x>280</x>
+      <y>230</y>
+      <width>71</width>
       <height>31</height>
      </rect>
     </property>
@@ -69,9 +59,9 @@
    <widget class="QPushButton" name="bt_entrada">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>190</y>
-      <width>81</width>
+      <x>280</x>
+      <y>180</y>
+      <width>71</width>
       <height>31</height>
      </rect>
     </property>
@@ -85,7 +75,7 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>10</x>
       <y>300</y>
       <width>81</width>
       <height>21</height>
@@ -98,7 +88,7 @@
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>450</x>
       <y>300</y>
       <width>71</width>
       <height>21</height>
@@ -111,7 +101,7 @@
    <widget class="QLabel" name="l_num_ingreso">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>100</x>
       <y>300</y>
       <width>64</width>
       <height>17</height>
@@ -127,7 +117,7 @@
    <widget class="QLabel" name="l_num_salida">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>520</x>
       <y>300</y>
       <width>64</width>
       <height>17</height>
@@ -140,9 +130,9 @@
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>40</y>
-      <width>241</width>
+      <x>640</x>
+      <y>10</y>
+      <width>211</width>
       <height>251</height>
      </rect>
     </property>
@@ -150,81 +140,90 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../../.designer/escudo.png</pixmap>
+     <pixmap>../escudo.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QTableWidget" name="ta_ingreso">
+   <widget class="QTableWidget" name="tb_ingreso">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>10</x>
       <y>330</y>
-      <width>331</width>
-      <height>201</height>
+      <width>431</width>
+      <height>231</height>
      </rect>
     </property>
     <column>
      <property name="text">
-      <string>Nueva columna</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Id</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
       <string>Cedula</string>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
      </property>
     </column>
     <column>
      <property name="text">
       <string>Nombre</string>
      </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
     </column>
     <column>
      <property name="text">
-      <string/>
+      <string>Hora</string>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
      </property>
     </column>
-   </widget>
-   <widget class="QTableView" name="ta_ingreso_2">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>330</y>
-      <width>331</width>
-      <height>201</height>
-     </rect>
-    </property>
+    <column>
+     <property name="text">
+      <string>Portería</string>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
    </widget>
    <widget class="QLabel" name="l_fecha">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>0</y>
-      <width>111</width>
+      <x>420</x>
+      <y>10</y>
+      <width>231</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#005500;&quot;&gt;01-06-2020&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#005500;&quot;&gt;01-06-2020&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QPushButton" name="bt_finalizar">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>570</y>
-      <width>83</width>
+      <x>790</x>
+      <y>590</y>
+      <width>81</width>
       <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 85, 0);</string>
+     <string notr="true">background-color: rgb(255, 89, 0);</string>
     </property>
     <property name="text">
      <string>FInalizar</string>
@@ -233,7 +232,7 @@
    <widget class="QPushButton" name="bt_pendientes">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>10</x>
       <y>580</y>
       <width>81</width>
       <height>31</height>
@@ -246,13 +245,77 @@
      <string>Pendientes</string>
     </property>
    </widget>
+   <widget class="QTableWidget" name="tb_salida">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>330</y>
+      <width>421</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <column>
+     <property name="text">
+      <string>Cedula</string>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Nombre</string>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Hora</string>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Portería</string>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+   </widget>
+   <widget class="QLineEdit" name="le_tip">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>120</y>
+      <width>311</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>745</width>
+     <width>896</width>
      <height>22</height>
     </rect>
    </property>
