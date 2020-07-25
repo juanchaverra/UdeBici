@@ -4,19 +4,18 @@ db = mysql.connect(
     host="localhost",
     user="root",
     passwd="",
-    database="registro"
+  #  database="registro"
 
 )
 
 cursor = db.cursor()
-
+"""
 cursor.execute("SELECT * FROM estudiante")
 
 resultado = cursor.fetchall()
 for i in resultado:
     print(i)
-
-
+"""
 
 """#Crear database, 
 cursor.execute("CREATE DATABASE estudiante")

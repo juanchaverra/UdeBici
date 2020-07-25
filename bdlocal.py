@@ -28,15 +28,15 @@ def insertar_registro(dato):
     db.commit()
 
 
-def select_registro():
+def select_registro(b=0):
     query = "SELECT * FROM registro"
     cursor.execute(query)
-    print("TABLA  registro")
     resultado = cursor.fetchall()
-    for i in resultado:
-        print(i)
-
-    print("------------------------------------------------------------------------------")
+    if b == 1:
+        for i in resultado:
+            print(i)
+    else:
+        return resultado
 
 
 def delete_registro():
@@ -50,12 +50,16 @@ def where_registro(cc):
     cursor.execute(query)
     return cursor.fetchall()
 
+def actualizar_registro(cc, serie, marca, color):
+    query = "UPDATE registro SET serie = \'" + serie + "\', marca = \'" + marca + "\', color = \'"+ color +"\' WHERE cc = "+ cc
+    cursor.execute(query)
+    db.commit()
 
 # ------------------------------------------------------------------------------------------------------------
 #Ingreso
 
 def insertar_ingreso(dato):
-    query = "INSERT INTO ingreso (cc, nombre, horaingreso, porteriaingreso) VALUES (%s, %s, %s, %s)"
+    query = "INSERT INTO ingreso (cc, nombre, horaingreso, porteriaingreso, disponible) VALUES (%s, %s, %s, %s, %s)"
     cursor.execute(query, dato)
     db.commit()
 
@@ -75,6 +79,7 @@ def salida_porteria(hora_salida, porteria_salida, cc):
     query = "UPDATE ingreso SET horasalida= \'" + hora_salida + "\', porteriasalida = \'" + porteria_salida + "\' WHERE cc=" + str(cc)
     cursor.execute(query)
     db.commit()
+
 
 #horasalida VARCHAR(255), porteriasalida VARCHAR(255))
 
@@ -114,11 +119,17 @@ def limpiar_ingreso():
     db.commit()
 
 
+def disponible_ingreso(cc):
+    query = "UPDATE ingreso SET disponible = 'false' WHERE cc = " + cc
+    cursor.execute(query)
+    db.commit()
+
+
 #__________------------------------------------------------------------------------------------
 #salida
 
 def insert_salida(dato):
-    query = "INSERT INTO salida (cc, nombre, porteriasalida, horasalida) VALUES (%s, %s, %s, %s)"
+    query = "INSERT INTO salida (cc, nombre, porteriasalida, horasalida, disponible) VALUES (%s, %s, %s, %s, %s)"
     cursor.execute(query,dato)
     db.commit()
 
@@ -134,12 +145,18 @@ def where_salida(cc):
     return cursor.fetchall()
 
 def hora_porteria_salida(cc):
-    query = "SELECT horasalida, porteriasalida FROM salida WHERE cc="+ str(cc)
+    query = "SELECT horasalida, porteriasalida FROM salida WHERE cc=" + str(cc)
     cursor.execute(query)
     return cursor.fetchall()
 
 def limpiar_salida():
     query = "DELETE FROM salida"
+    cursor.execute(query)
+    db.commit()
+
+
+def disponible_salida(cc):
+    query = "UPDATE salida SET disponible = 'false' WHERE cc = " + cc
     cursor.execute(query)
     db.commit()
 #---------------------------------------------------------------------------------------------
@@ -167,23 +184,23 @@ def select_pendientes(b=0):
         return pendientes
 
 def where_pendientes(cc):
-    query = "SELECT * FROM pendientes WHERE cc="+ str(cc)
+    query = "SELECT * FROM pendientes WHERE cc=" + str(cc)
     cursor.execute(query)
     return cursor.fetchall()
 
 #cursor.execute("DROP TABLE ingreso")
-"""
-cursor.execute("CREATE TABLE ingreso (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, cc INT(11), nombre VARCHAR(255), horaingreso VARCHAR(255), porteriaingreso VARCHAR(255))")
-cursor.execute("CREATE TABLE registro (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, cc INT(11), nombre VARCHAR(255), serie VARCHAR(255), marca VARCHAR(255), color VARCHAR(255), foto VARCHAR(255))")
+#cursor.execute("CREATE TABLE ingreso (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, cc INT(11), nombre VARCHAR(255), horaingreso VARCHAR(255), porteriaingreso VARCHAR(255), disponible VARCHAR(255))")
+#cursor.execute("CREATE TABLE registro (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, cc INT(11), nombre VARCHAR(255), serie VARCHAR(255), marca VARCHAR(255), color VARCHAR(255), foto VARCHAR(255))")
 
-cursor.execute("CREATE TABLE salida (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, cc INT(11), nombre VARCHAR(255), horasalida VARCHAR(255), porteriasalida VARCHAR(255))")
+#cursor.execute("CREATE TABLE salida (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, cc INT(11), nombre VARCHAR(255), horasalida VARCHAR(255), porteriasalida VARCHAR(255), disponible VARCHAR(255))")
+"""
 
 cursor.execute("CREATE TABLE pendientes (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, cc INT(11), "
                "nombre VARCHAR(255), horaingreso VARCHAR(255), porteriaingreso VARCHAR(255), "
                "fechaingreso VARCHAR(255), horasalida VARCHAR(255), porteriasalida VARCHAR(255), "
                "fechasalida VARCHAR(255))")
-
 """
+
 #cc = "1037648995"
 #delete_ingreso(cc)
 #query = "SHOW TABLES"
@@ -205,4 +222,6 @@ dato = (cc, nombre, hora, porteria, fecha)
 #insert_pendientes_salida(dato)
 #select_pendientes(1)
 #insert_pendientes_entrada(dato)
-
+#cursor.execute("DROP TABLES ingreso, salida")
+cursor.execute("SHOW TABLES")
+print(cursor.fetchall())
